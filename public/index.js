@@ -27,19 +27,11 @@ const addMsn = () => {
         msn: document.querySelector('#msn').value
     }
     socket.emit('text' , msnObj)
-    document.querySelector('#msn').value = ' '
+    document.getElementById('msn').value= ' ';
     return false
 }
 
-// document.ready(()=>{
-//     document.querySelector('#msn').emojioneArea({
-//         pickerPosition: "bottom"
-//     });
-// });
+
 $(document).ready(function() {
-    $("#msn").emojioneArea(
-    //     {
-    //     pickerPosition: "bottom"
-    // }
-    );
+    $("#msn").emojioneArea();
 });
