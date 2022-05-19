@@ -1,0 +1,122 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.body__box{
+    background-color: rgb(10, 23, 34);
+}
+.chat__box{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+.h1{
+    color: #2ecece;
+}
+.box{
+    /* border: solid #2ecece; */
+    width: 720px;
+    height: 500px;
+    background-color: rgb(20, 25, 40);
+    padding: 16px;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 720px;
+}
+
+ .name__box{
+    width: 100%;
+    height: 70px;
+    position: relative;
+    overflow: hidden;
+}
+.name__box .input__name{
+    width: 82%;
+    height: 100%;
+    background: none;
+    color: #fff;
+    padding-top: 35px;
+    border: none;
+    outline: 0px;
+    border-bottom: 2px solid #2ecece;
+    font-size: 20px;
+}
+
+
+.text__name{
+    position: absolute;
+    bottom: 45px;
+    left: 0;
+    color: #2ecece; 
+    font-size: 14px;
+}
+
+.msn__box{
+    width: 100%;
+    position: relative;
+}
+
+.msn__box .input__msn{
+    width: 82%;
+    height: 100%;
+    color: #fff ;
+    background: none;
+    padding-top: 75px;
+    border: none;
+    outline: 0px;
+    border-bottom: 2px solid #2ecece;
+    font-size: 20px;
+} 
+
+.submit{
+    position: absolute;
+    bottom: 4px;
+    right: 0;
+    width: 110px;
+    height: 95px;
+    background-color: rgb(20, 50, 200);
+    font-weight: bold;
+    color: #fff;
+    border: none;
+}
+
+.submit:hover{
+    background-color: #2ecece;
+    font-size: 1em;
+    color: #000;
+} 
+
+
+@media screen and (max-width: 480px) {
+    .box{
+        width: 300px;
+        height: 300px;
+        padding: 16px;
+    }
+    .form{
+        width: 300px;
+        height: 200px;
+    }
+    .msn__box .input__msn{
+        padding-top: 5px ;
+        width: 70%;
+        font-size: 14px;
+
+    }
+    .submit{
+        width: 85px;
+        height: 30px;
+        border-radius: 3px;
+    }
+    .name__box .input__name{
+        font-size: 14px;
+    }
+}
