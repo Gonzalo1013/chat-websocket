@@ -24,6 +24,16 @@
     height: 500px;
     background-color: rgb(20, 25, 40);
     padding: 16px;
+    overflow: hidden;
+    overflow-y: scroll;
+    border-radius: 30px;
+}
+.box::-webkit-scrollbar{
+    width: 7px;
+}
+.box::-webkit-scrollbar-thumb{
+    background-color: orange;
+    border-radius: 10px;
 }
 .form{
     display: flex;
@@ -32,7 +42,7 @@
     width: 720px;
 }
 
- .name__box{
+.name__box{
     width: 100%;
     height: 70px;
     position: relative;
@@ -105,11 +115,15 @@
         width: 300px;
         height: 200px;
     }
+    .msn__box{
+        height: 100px;
+
+    }
     .msn__box .input__msn{
         padding-top: 5px ;
-        width: 70%;
+        width: 100%;
+        height: 70px;
         font-size: 14px;
-
     }
     .submit{
         width: 85px;
@@ -118,5 +132,6 @@
     }
     .name__box .input__name{
         font-size: 14px;
+        width: 100%;
     }
 }
