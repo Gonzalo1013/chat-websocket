@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('./templates/head.ejs') %>
+<body>
+    <div class="container mt-5">
+        <form onsubmit="return addProduct()">
+            <div class="row">
+                <div class="col">
+                    <label class="form-label" for="title">Titulo</label>
+                    <input class="form-control" type="text" name="title" placeholder="Title" id="title">
+                </div>
+                <div class="col">
+                    <label class="form-label" for="title">Descripción</label>
+                    <input class="form-control" type="text" name="descrption" placeholder="Descripción" id="description">
+                </div>
+                <div class="col">
+                    <label class="form-label" for="price">Precio</label>
+                    <input class="form-control" type="number" name="price" placeholder="Price" id="price">
+                </div>
+                <div class="col">
+                    <label class="form-label" for="price">Stock</label>
+                    <input class="form-control" type="number" name="stock" placeholder="stock" id="stock">
+                </div>
+                <div class="col">
+                    <label class="form-label" for="img">Imagen</label>
+                    <input class="form-control" type="text" name="thumbnail" placeholder="Thumbnail" id="thumbnail">
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-success">Guardar</button>    
+        </form>
+    </div>
+    <div class="container mt-5">
+        <table class="table table-success table-striped table-hover">
+            <thead>
+                <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Producto</th>
+                <th scope="col">Precio</th>
+                <th scope="col">Imagen</th>
+                </tr>
+            </thead>
+            <tbody class="overflow-auto" id="box">
+                <% data.map((x) => { %>
+                <tr>
+                <th scope="row"><%= x.id %></th>
+                <td><%= x.title %></td>
+                <td>$<%= x.price %></td>
+                <td><img width="70px" src=<%= x.thumbnail %> class="img-fluid" alt="<%= x.title %>"></td>
+                <!-- <td><img width="70px" src=/public/uploads/<%= x.thumbnail %> class="img-fluid" alt="<%= x.title %>"></td> -->
+                </tr>
+                <% }) %>
+            </tbody>
+            <!-- <tbody class="overflow-auto" id="box">
+            </tbody> -->
+        </table>
+    </div>
+    <div class="container mt-5 border border-dark rounded">
+        <h1 class="text-center">Centro de mensajes</h1>
+        <br>
+        <form onsubmit="return addMessage()">
+            <div id="box-msn" class="bg-secondary overflow-auto" style="--bs-bg-opacity: .5; max-height: 250px; border: solid black;"></div>
+            <br>
+            <label class="form-label p-2" for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <br>
+            <div class="row">
+                <div class="col">
+                    <label class="form-label" for="texto">Mensaje</label>
+                    <input type="text" name="text" id="msn" placeholder="Mensaje" required>
+                    <button type="submit" class="btn btn-primary p-2 m-2">Enviar</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/index.js"></script>
+</html>
